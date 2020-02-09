@@ -1,8 +1,8 @@
 FROM nginx:latest
-LABEL maintainer="mps299792458@gmail.com" \
+LABEL maintainer="christian@dautume.fr" \
       version="0.2.0"
 
-ENV FUSIONDIRECTORY_VERSION=1.2-1
+ENV FUSIONDIRECTORY_VERSION=1.3-1
 
 RUN rm -f /etc/apt/sources.list.d/* \
  && apt-get update \
@@ -16,8 +16,11 @@ RUN rm -f /etc/apt/sources.list.d/* \
     argonaut-server \
     fusiondirectory=${FUSIONDIRECTORY_VERSION} \
     fusiondirectory-plugin-argonaut=${FUSIONDIRECTORY_VERSION} \
+    fusiondirectory-plugin-alias=${FUSIONDIRECTORY_VERSION} \
     fusiondirectory-plugin-autofs=${FUSIONDIRECTORY_VERSION} \
+    fusiondirectory-plugin-applications=${FUSIONDIRECTORY_VERSION} \
     fusiondirectory-plugin-certificates=${FUSIONDIRECTORY_VERSION} \
+    fusiondirectory-plugin-dovecot=${FUSIONDIRECTORY_VERSION} \
     fusiondirectory-plugin-gpg=${FUSIONDIRECTORY_VERSION} \
     fusiondirectory-plugin-ldapdump=${FUSIONDIRECTORY_VERSION} \
     fusiondirectory-plugin-ldapmanager=${FUSIONDIRECTORY_VERSION} \
@@ -25,6 +28,7 @@ RUN rm -f /etc/apt/sources.list.d/* \
     fusiondirectory-plugin-postfix=${FUSIONDIRECTORY_VERSION} \
     fusiondirectory-plugin-ssh=${FUSIONDIRECTORY_VERSION} \
     fusiondirectory-plugin-sudo=${FUSIONDIRECTORY_VERSION} \
+    fusiondirectory-plugin-sogo=${FUSIONDIRECTORY_VERSION} \
     fusiondirectory-plugin-systems=${FUSIONDIRECTORY_VERSION} \
     fusiondirectory-plugin-weblink=${FUSIONDIRECTORY_VERSION} \
     fusiondirectory-plugin-webservice=${FUSIONDIRECTORY_VERSION} \
